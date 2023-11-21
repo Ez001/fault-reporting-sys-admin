@@ -39,23 +39,6 @@
   <?php 
     if ( !in_array( $page, $header_blacklist_arr ) )
     {
-
-		if ( isset( $_POST[ 'set_batch_top' ] ) ) 
-		{
-			ob_clean();
-
-			if ( session_status() == PHP_SESSION_NONE )
-			{
-				session_start();    
-			}
-			   
-			$_SESSION[ 'batch_top_label' ] = $_POST[ 'batch_top_label' ] ?? null;
-			echo $_SESSION[ 'batch_top' ] = $_POST[ 'batch_top' ];
-
-			ob_end_flush();
-			exit();
-		}
-
       
   ?>
   <!-- ======= Header ======= -->
@@ -66,19 +49,6 @@
         <!-- <span class="d-none d-lg-block">Admin</span> -->
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
-      <form class="ms-5">
-        <div class="form-group d-flex align-items-center">
-				<label for="batch_top" class="fw-bold me-1 d-none d-md-block">Batch </label>
-				<select name="batch_top" id="batch_top" class="form-select w-auto" title="Batch">
-					<?= $web_app->genBatchNos( 1, $bt_limit, $batch_top ) ?>
-				</select>
-			
-				<select name="batch_top_label" id="batch_top_label" class="form-select ms-1 w-50" title="Batch Label">
-					<option value="">None</option>
-					<?= $web_app->loadBatchLabels( $batch_top_label ) ?>
-				</select>
-        </div>
-      </form>
     </div><!-- End Logo -->
 
     <nav class="header-nav ms-auto">

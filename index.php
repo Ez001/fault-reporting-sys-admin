@@ -11,21 +11,9 @@
    //App functions
    include_once( 'config.php' );
    include_once( 'models/WebApp.php' );
-   include_once( 'models/Batch.php' );
 
    //Creating App instances
    $web_app = new WebApp();
-   $batch = new Batch();
-
-   $batch_dt = $batch->getByIsActive( [ 1 ] );
-   $bt_no = $batch_dt['bt_no'];
-   $bt_label = $batch_dt['bt_label'];
-   $bt_amount_approved = $batch_dt['amount_approved'] ?? 0.0;
-   
-   $bt_limit = $batch->getMaxBtNo( [ ] );
-
-   $batch_top = $_SESSION[ 'batch_top' ] ?? $bt_no;
-   $batch_top_label = $_SESSION[ 'batch_top_label' ] ?? $bt_label;
 
    //page name logic
    $uri_arr = explode( '/', $uri );

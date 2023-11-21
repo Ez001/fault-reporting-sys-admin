@@ -26,9 +26,9 @@
                         <form class="row g-3 needs-validation" method="POST" novalidate>
 
                            <div class="col-12">
-                              <label for="uname" class="form-label fw-bold">Username</label>
-                              <input type="text" name="uname" class="form-control" id="uname" placeholder="Enter Username" value="<?= $web_app->persistData( 'uname' ); ?>" autofocus required>
-                              <div class="invalid-feedback">Please enter your username!</div>
+                              <label for="email" class="form-label fw-bold">Email</label>
+                              <input type="email" name="email" class="form-control" id="email" placeholder="Enter Username" value="<?= $web_app->persistData( 'email' ); ?>" autofocus required>
+                              <div class="invalid-feedback">Please enter your email!</div>
                            </div> 
 
                            <div class="col-12">

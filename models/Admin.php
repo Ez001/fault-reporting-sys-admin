@@ -37,7 +37,7 @@
 
 		function getLogin( array $dt ) 
 		{
-			$sql = "SELECT * FROM $this->table WHERE uname = ?";
+			$sql = "SELECT * FROM $this->table WHERE email = ?";
 			$res = $this->fetchData( $sql, $dt );
 
 			return $res ?? [];

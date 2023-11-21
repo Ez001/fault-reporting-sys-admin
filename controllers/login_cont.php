@@ -11,20 +11,22 @@
 	if ( isset( $_POST[ 'log_btn' ] ) ) 
 	{
 		// Getting user values
-		$uname = $_POST[ 'uname' ];
+		$email = $_POST[ 'email' ];
 		$pword = $_POST[ 'pword' ]; 
 
 		//Validating inputs
-		if ( $uname && $pword ) 
+		if ( $email && $pword ) 
 		{
-			$dt_01 = [ $uname ];
+			$dt_01 = [ $email ];
 			$admin_dt = $admin->getLogin( $dt_01 );
+			$role = $admin_dt['role'] ?? '';
+
 			$pwordx = $admin_dt[ 'pword' ] ?? '';
-			
+		
 			//Match user password
 			$match_pword = $admin->decPword( $pword, $pwordx );
 
-			if ( $match_pword ) 
+			if ( $match_pword && $role == 'Admin' ) 
 			{  
 				$id = $admin_dt[ 'id' ];
 				//set session and cookie
@@ -39,7 +41,7 @@
 			else 
 			{
 				$msg = $web_app->showAlertMsg( 'danger', 'Sorry, Admin Does Not Exist!' ); 
-			}
+			}			
 
 		}
 		else 
