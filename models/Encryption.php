@@ -1,5 +1,5 @@
 <?php 
-   #   Date modified: 29/03/2023
+  #   Date modified: 22/11/2023
 	
 	trait Encryption 
   {
