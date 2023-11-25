@@ -1,10 +1,10 @@
 <?php 
 	#   Date modified: 22/11/2023  
 
-	include_once( 'models/Admin.php' );
+	include_once( 'models/User.php' );
 	
 	//Creating instances
-	$admin = new Admin(); 
+	$user = new User(); 
 
 	if ( isset( $_POST[ 'log_btn' ] ) ) 
 	{
@@ -16,13 +16,13 @@
 		if ( $email && $pword ) 
 		{
 			$dt_01 = [ $email ];
-			$admin_dt = $admin->getLogin( $dt_01 );
+			$admin_dt = $user->getLogin( $dt_01 );
 			$role = $admin_dt['role'] ?? '';
 
 			$pwordx = $admin_dt[ 'pword' ] ?? '';
 		
 			//Match user password
-			$match_pword = $admin->decPword( $pword, $pwordx );
+			$match_pword = $user->decPword( $pword, $pwordx );
 
 			if ( $match_pword && $role == 'Admin' ) 
 			{  

@@ -1,11 +1,11 @@
 <?php 
 	#   Date modified: 22/11/2023  
 
-	include_once( 'models/Admin.php' );
+	include_once( 'models/User.php' );
 
 	//Creating instances
-	$admin = new Admin();  
-	$admin_id = $admin->getLoggedAdmin();
+	$user = new User();  
+	$admin_id = $user->getLoggedUser();
 
 	//when not logged in
 	if ( !$admin_id ) 
