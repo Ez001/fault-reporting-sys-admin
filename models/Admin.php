@@ -4,7 +4,7 @@
 	include_once( 'App.php' );
 	include_once( 'Encryption.php' );
 
-	class User
+	class Admin
 	{
 		//using Namespaces
 		use App {
@@ -14,7 +14,7 @@
 		use Encryption;
 
 		protected $table = '';
-		const DB_TABLE = 'users';
+		const DB_TABLE = 'admins';
 
 		function __construct()
 	 	{
@@ -30,7 +30,7 @@
 			return $res ?? false;	  
 		}
 
-		function getLoggedUser()
+		function getLoggedAdmin()
 		{
 			return $_COOKIE[ APP_SESS ] ?? 0;
 		}
@@ -43,14 +43,14 @@
 			return $res ?? [];
 		}
 
-		function getAllUsers( array $dt ) 
+		function getAll( array $dt ) 
 		{
-			$sql = "SELECT * FROM $this->table WHERE role = ?";
+			$sql = "SELECT * FROM $this->table ";
 			$res = $this->fetchAllData( $sql, $dt );
 
 			return $res ?? [];
 		}
-		
+
 		function updateById( array $dt ) 
 		{
 			$sql = "UPDATE $this->table SET `uname` = ?, `email` = ?, `full_name` = ?, `status` = ?, `type` = ? WHERE id = ?";

@@ -115,7 +115,7 @@
 
 		function fullName( array $data )
 		{
-			return $data[ 'first_name' ] . ' ' . $data[ 'middle_name' ] . ' ' . $data[ 'last_name' ];
+			return $data[ 'first_name' ] . ' '. $data[ 'last_name' ];
 		}
 
 		function genBatchNos( $bt_no, $bt_limit, $sel_id = 0 )

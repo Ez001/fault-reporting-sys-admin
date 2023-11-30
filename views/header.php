@@ -88,47 +88,10 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="borrowers">
-          <i class="bi bi-bank"></i>
-          <span>Borrowers</span>
+        <a class="nav-link" href="users">
+          <i class="bi bi-people"></i>
+          <span>Users</span>
         </a>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link" href="loans">
-          <i class="bi bi-cash-coin"></i>
-          <span>Loans</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="repayments">
-          <i class="bi bi-cash-stack"></i>
-          <span>Repayments</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#settings-nav" data-bs-toggle="collapse" href="#" aria-expanded="false">
-          <i class="bi bi-tools"></i><span>Settings</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="settings-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav" >
-          <li>
-            <a href="admins">
-              <i class="ri ri-admin-line fs-6"></i><span>Admins</span>
-            </a>
-          </li>
-          <li>
-            <a href="batch">
-              <i class="bi bi-clipboard-plus fs-6"></i><span>Batch</span>
-            </a>
-          </li>
-          <li>
-            <a href="eligibility-criteria">
-              <i class="bi bi-clipboard-check fs-6"></i><span>Eligibility Criteria</span>
-            </a>
-          </li>
-        </ul>
       </li>
 
     </ul>
