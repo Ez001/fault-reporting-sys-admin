@@ -50,6 +50,14 @@
 
 			return $res ?? [];
 		}
+
+		function getCount( array $dt )
+		{
+			$sql = "SELECT COUNT( id ) AS total FROM $this->table";
+			$res = $this->fetchData( $sql, $dt );
+
+			return $res['total'] ?? [];
+		}
 		
 		function updateById( array $dt ) 
 		{

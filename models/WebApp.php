@@ -118,33 +118,6 @@
 			return $data[ 'first_name' ] . ' '. $data[ 'last_name' ];
 		}
 
-		function genBatchNos( $bt_no, $bt_limit, $sel_id = 0 )
-		{
-			$options = '';
-
-			for ( $i = $bt_no; $i <= $bt_limit; $i++ ) 
-			{ 
-				$sel = $sel_id == $i ? 'selected' : '';
-				$options .= "<option value='$i' $sel> $i </option>";
-			}
-
-			echo $options;
-		}
-
-		function loadStatuses( $sel_id = '' )
-      {
-         $data_arr = [ 'ACTIVE', 'INACTIVE' ]; 
-
-	      return $this->createOptions( $data_arr, $sel_id );
-      }
-
-      function loadAccountTypes( $sel_id = '' )
-      {
-         $data_arr = [ 'Super-Admin', 'Account', 'Data-Entry' ]; 
-
-	      return $this->createOptions( $data_arr, $sel_id );
-      }
-
 
 		function getCard( $card_title, $value, $icon_name, $icon_type )
 		{
@@ -165,103 +138,6 @@
 					</div>
 				</div>";
 		}
-
-		function loadBatchLabels( $sel_id )
-		{
-		   $data_arr = range( 'A', 'Z' );
-
-			return $this->createOptions( $data_arr, $sel_id );
-		}
-
-		function createNewDateByMonth( $date, $no ) 
-		{
-			$date = new DateTime( $date );
-			$date->modify( "+$no month" );
-			return $date->format( 'Y-m-d' );
-		}
-		
-		function formatDate( $date, $format = 'Y-m-d' ) 
-		{
-			$date = new DateTime( $date );
-			return $date->format( $format );
-		}
-
-		function showStatusType( $status_type )
-      {
-      	$status_type_x = '';
-			
-      	if( $status_type )
-      	{
-	      	$status_type_x = "<span class='badge bg-danger'> $status_type </span>";
-
-				if ( $status_type == 'Approved' ) 
-				{
-					$status_type_x = "<span class='badge bg-success'> $status_type </span>";
-				}
-				else if ( $status_type == 'Pending' ) 
-				{
-					$status_type_x = "<span class='badge bg-info'> $status_type </span>";
-				}
-			}
-
-			return $status_type_x;
-      }
-
-      function showRepaymentStatusType( $repay_type )
-      {
-      	$repay_type_x = '';
-
-      	if( $repay_type )
-      	{
-	      	$repay_type_x = "<span class='badge bg-info'> $repay_type </span>";
-
-				if ( $repay_type == 'Full' ) 
-				{
-					$repay_type_x = "<span class='badge bg-success'> $repay_type </span>";
-				}
-			}
-
-			return $repay_type_x;
-      }
-
-      function showPaymentStatusType( $payment_type )
-      {
-      	$payment_type_x = '';
-
-      	if( $payment_type )
-      	{
-	      	$payment_type_x = "<span class='badge bg-info'> $payment_type </span>";
-
-				if ( $payment_type == 'Paid' ) 
-				{
-					$payment_type_x = "<span class='badge bg-success'> $payment_type </span>";
-				}
-			}
-
-			return $payment_type_x;
-      }
-
-
-      function loadRepaymentStatus( $sel_id = '' )
-      {
-         $data_arr = [ 'Part', 'Full' ]; 
-
-	      return $this->createOptions( $data_arr,  $sel_id );
-      }
-
-      function loadStatus( $sel_id = '' )
-      {
-         $data_arr = [ 'Pending', 'Rejected', 'Approved' ]; 
-
-	      return $this->createOptions( $data_arr,  $sel_id );
-      }
-
-      function loadPaymentStatus( $sel_id = '' )
-      {
-         $data_arr = [ 'Paid', 'Unpaid' ]; 
-
-	      return $this->createOptions( $data_arr,  $sel_id );
-      }
 
 	}
 ?>
