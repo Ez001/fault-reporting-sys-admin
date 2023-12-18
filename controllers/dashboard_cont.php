@@ -2,7 +2,7 @@
    #   Date modified: 22/11/2023 
 
 	//auth
-	include_once( 'admin_auth.php' );
+	include_once( 'user_auth.php' );
 
 	//App Function
 	include_once( 'models/ReportFault.php');
