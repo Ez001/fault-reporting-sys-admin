@@ -115,9 +115,11 @@
 
 		function fullName( array $data )
 		{
-			return $data[ 'first_name' ] . ' '. $data[ 'last_name' ];
+			if ( $data ) 
+			{
+				return $data[ 'first_name' ] . ' ' . $data[ 'last_name' ];
+			}
 		}
-
 
 		function getCard( $card_title, $value, $icon_name, $icon_type )
 		{
@@ -138,6 +140,40 @@
 					</div>
 				</div>";
 		}
+
+		function showStatusType( $status_type )
+      {
+      	$status_type_x = '';
+			
+      	if( $status_type )
+      	{
+	      	$status_type_x = "<span class='badge bg-warning'> $status_type </span>";
+
+				if ( $status_type == 'Completed' ) 
+				{
+					$status_type_x = "<span class='badge bg-success'> $status_type </span>";
+				}
+			}
+
+			return $status_type_x;
+      }
+
+      function showReviewStatusType( $review_type )
+      {
+      	$review_type_x = '';
+
+      	if( $review_type )
+      	{
+	      	$review_type_x = "<span class='badge bg-danger'> $review_type </span>";
+
+				if ( $review_type == 'Satisfied' ) 
+				{
+					$review_type_x = "<span class='badge bg-success'> $review_type </span>";
+				}
+			}
+
+			return $review_type_x;
+      }
 
 	}
 ?>

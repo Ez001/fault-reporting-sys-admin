@@ -88,9 +88,9 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="users">
-          <i class="bi bi-people"></i>
-          <span>Users</span>
+        <a class="nav-link" href="reported-faults">
+          <i class="bi bi-bank"></i>
+          <span>Reported Faults</span>
         </a>
       </li>
 
